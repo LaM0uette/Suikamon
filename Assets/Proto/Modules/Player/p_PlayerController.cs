@@ -14,8 +14,7 @@ namespace Proto.Modules.Player
         private p_PlayerInputReader _inputReader { get; set; }
         
         [SerializeField] private float _speed = 7f;
-        [SerializeField] private float _minX = -10f;
-        [SerializeField] private float _maxX = 10f;
+        [SerializeField] private float _maxX = 3f;
 
         private void Awake()
         {
@@ -39,6 +38,15 @@ namespace Proto.Modules.Player
 
         private void Move()
         {
+            // if (playerPosition.x > _maxX)
+            // {
+            //     transform.position = new Vector3(_maxX, playerPosition.y, playerPosition.z);
+            // }
+            // else if (playerPosition.x < -_maxX)
+            // {
+            //     transform.position = new Vector3(-_maxX, playerPosition.y, playerPosition.z);
+            // }
+            
             var movement = new Vector3(_inputReader.MovementValue, 0f, 0);
             transform.position += movement * (_speed * Time.deltaTime);
         }
@@ -48,6 +56,15 @@ namespace Proto.Modules.Player
             var mousePosition = Mouse.current.position.ReadValue();
             var worldPosition = _mainCamera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, _mainCamera.nearClipPlane));
 
+            if (worldPosition.x > _maxX)
+            {
+                worldPosition = new Vector3(_maxX, worldPosition.y, worldPosition.z);
+            }
+            else if (worldPosition.x < -_maxX)
+            {
+                worldPosition = new Vector3(-_maxX, worldPosition.y, worldPosition.z);
+            }
+            
             var playerTransform = transform;
             var playerPosition = playerTransform.position;
             
