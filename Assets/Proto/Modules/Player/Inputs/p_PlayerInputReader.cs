@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,8 @@ namespace Proto.Modules.Player.Inputs
         #region Statements
 
         public float MovementValue { get; private set; }
+        
+        public Action DropBallEvent { get; set; }
 
         #endregion
 
@@ -17,6 +20,11 @@ namespace Proto.Modules.Player.Inputs
         {
             var movementInput = value.Get<Vector2>().x;
             MovementValue = movementInput < 0 ? -1 : movementInput > 0 ? 1 : 0;
+        }
+        
+        private void OnDropBall()
+        {
+            DropBallEvent?.Invoke();
         }
         
         #endregion

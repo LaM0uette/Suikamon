@@ -1,5 +1,5 @@
-using JetBrains.Annotations;
 using Proto.Modules.Player.Inputs;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,15 +10,16 @@ namespace Proto.Modules.Player
     {
         #region Statements
 
-        [NotNull] private Camera _mainCamera { get; set; }
+        private Camera _mainCamera { get; set; }
         private p_PlayerInputReader _inputReader { get; set; }
         
+        [Space, Title("Player Settings")]
         [SerializeField] private float _speed = 7f;
         [SerializeField] private float _maxX = 3f;
 
         private void Awake()
         {
-            _mainCamera = Camera.main!;
+            _mainCamera = Camera.main;
             _inputReader = GetComponent<p_PlayerInputReader>();
         }
 
