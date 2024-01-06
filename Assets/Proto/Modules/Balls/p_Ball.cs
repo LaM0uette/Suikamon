@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Proto.Modules.Balls
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Ball : MonoBehaviour
+    public class p_Ball : MonoBehaviour
     {
         #region Statements
 
@@ -12,6 +12,18 @@ namespace Proto.Modules.Balls
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+        }
+
+        #endregion
+
+        #region Events
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (!other.transform.TryGetComponent(out p_Ball ball))
+                return;
+            
+            Debug.Log(ball.name);
         }
 
         #endregion
