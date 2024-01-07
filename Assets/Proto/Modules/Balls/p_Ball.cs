@@ -1,3 +1,4 @@
+using System;
 using Proto.Modules.Manager;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -14,6 +15,8 @@ namespace Proto.Modules.Balls
         [Space, Title("Balls")]
         public int BallIndex;
         
+        private bool _isCollided { get; set; }
+        
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -27,6 +30,8 @@ namespace Proto.Modules.Balls
         {
             if (!other.transform.TryGetComponent(out p_Ball ball))
                 return;
+            
+            _isCollided = true;
 
             if (ball.BallIndex == BallIndex)
             {
@@ -40,6 +45,21 @@ namespace Proto.Modules.Balls
                 Destroy(gameObject);
             }
         }
+        
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            _isCollided = false;
+        }
+        
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            if (!other.gameObject.CompareTag("DeadZone")) return;
+            
+            if (_isCollided)
+            {
+                p_GameManager.Instance.GameOver();
+            }
+        }
 
         #endregion
 
@@ -48,6 +68,11 @@ namespace Proto.Modules.Balls
         public void ActiveRigidbody()
         {
             _rigidbody.simulated = true;
+        }
+        
+        public void DeactiveRigidbody()
+        {
+            _rigidbody.simulated = false;
         }
 
         public void Immpulse()

@@ -66,6 +66,9 @@ namespace Proto.Modules.Player
 
         private void DropBall()
         {
+            if (p_GameManager.IsGameOver) 
+                return;
+            
             _currentBall.transform.SetParent(p_GameManager.Instance.BallsParent.transform);
             
             var ball = _currentBall.GetComponent<p_Ball>();
