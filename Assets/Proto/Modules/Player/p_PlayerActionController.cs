@@ -53,7 +53,7 @@ namespace Proto.Modules.Player
             _nextBall = GetNextBall();
             
             var ballSize = _nextBall.transform.localScale;
-            _inputReader.BallOffset = ballSize.x / 2;
+            p_GameManager.BallOffset = ballSize.x / 2;
             
             _currentBall = Instantiate(_nextBall, _playerBallParent.transform.position, Quaternion.identity, _playerBallParent.transform);
         }

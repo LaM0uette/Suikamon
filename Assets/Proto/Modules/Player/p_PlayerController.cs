@@ -1,3 +1,4 @@
+using Proto.Modules.Manager;
 using Proto.Modules.Player.Inputs;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -57,7 +58,7 @@ namespace Proto.Modules.Player
             var mousePosition = Mouse.current.position.ReadValue();
             var worldPosition = _mainCamera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, _mainCamera.nearClipPlane));
 
-            var offset = _maxX - _inputReader.BallOffset;
+            var offset = _maxX - p_GameManager.BallOffset;
             if (worldPosition.x > offset)
             {
                 worldPosition = new Vector3(offset, worldPosition.y, worldPosition.z);

@@ -7,6 +7,7 @@ namespace Proto.Modules.Manager
         #region Statements
 
         public static p_GameManager Instance { get; private set; }
+        public static float BallOffset { get; set; }
         
         public GameObject BallsParent;
 
