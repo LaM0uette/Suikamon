@@ -1,3 +1,4 @@
+using System.Collections;
 using Proto.Modules.Balls;
 using Proto.Modules.Manager;
 using Proto.Modules.Player.Inputs;
@@ -19,6 +20,9 @@ namespace Proto.Modules.Player
 
         private GameObject _nextBall;
         private GameObject _currentBall;
+        
+        private bool _canDropBall = true;
+        private float _cooldown = 0.4f;
         
         private void Awake()
         {
@@ -66,9 +70,10 @@ namespace Proto.Modules.Player
 
         private void DropBall()
         {
-            if (p_GameManager.IsGameOver) 
+            if (p_GameManager.IsGameOver || !_canDropBall) 
                 return;
             
+            _canDropBall = false;
             _currentBall.transform.SetParent(p_GameManager.Instance.BallsParent.transform);
             
             var ball = _currentBall.GetComponent<p_Ball>();
@@ -76,6 +81,13 @@ namespace Proto.Modules.Player
             ball.Immpulse();
             
             SpawnNextBall();
+            StartCoroutine(Cooldown());
+        }
+        
+        private IEnumerator Cooldown()
+        {
+            yield return new WaitForSeconds(_cooldown);
+            _canDropBall = true;
         }
 
         #endregion
