@@ -20,6 +20,7 @@ namespace Proto.Modules.Player
         [SerializeField] private GameObject _nextBallParent;
 
         private GameObject _nextBall;
+        private GameObject _nextNextBall;
         private GameObject _currentBall;
         
         private bool _canDropBall = true;
@@ -32,6 +33,7 @@ namespace Proto.Modules.Player
 
         private void Start()
         {
+            _nextNextBall = GetNextBall();
             SpawnNextBall();
         }
 
@@ -55,12 +57,19 @@ namespace Proto.Modules.Player
         
         private void SpawnNextBall()
         {
-            _nextBall = GetNextBall();
+            _nextBall = _nextNextBall;
             
             var ballSize = _nextBall.transform.localScale;
             p_GameManager.BallOffset = ballSize.x / 2;
             
             _currentBall = Instantiate(_nextBall, _playerBallParent.transform.position, Quaternion.identity, _playerBallParent.transform);
+            
+            _nextNextBall = GetNextBall();
+
+            for (var i = 0; i < _nextBallParent.transform.childCount; i++)
+                Destroy(_nextBallParent.transform.GetChild(i).gameObject);
+            
+            Instantiate(_nextNextBall, _nextBallParent.transform.position, Quaternion.identity, _nextBallParent.transform);
         }
         
         private static GameObject GetNextBall()
