@@ -1,3 +1,5 @@
+using Proto.Modules.Manager;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Proto.Modules.Balls
@@ -6,8 +8,11 @@ namespace Proto.Modules.Balls
     public class p_Ball : MonoBehaviour
     {
         #region Statements
-
+        
         private Rigidbody2D _rigidbody { get; set; }
+        
+        [Space, Title("Balls")]
+        public int BallIndex;
         
         private void Awake()
         {
@@ -22,8 +27,18 @@ namespace Proto.Modules.Balls
         {
             if (!other.transform.TryGetComponent(out p_Ball ball))
                 return;
-            
-            Debug.Log(ball.name);
+
+            if (ball.BallIndex == BallIndex)
+            {
+                var nextBall = p_GameManager.Instance.Balls[++BallIndex];
+                var ballGo = Instantiate(nextBall, transform.position, Quaternion.identity, p_GameManager.Instance.BallsParent.transform);
+                var newBall = ballGo.GetComponent<p_Ball>();
+                newBall.ActiveRigidbody();
+                newBall.Immpulse();
+                
+                Destroy(ball.gameObject);
+                Destroy(gameObject);
+            }
         }
 
         #endregion

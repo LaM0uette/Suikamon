@@ -6,13 +6,15 @@ namespace Proto.Modules.Manager
     {
         #region Statements
 
-        public static p_GameManager _instance { get; private set; }
+        public static p_GameManager Instance { get; private set; }
+        
+        public GameObject BallsParent;
 
         public GameObject[] Balls;
 
         private void Awake()
         {
-            _instance ??= this;
+            Instance ??= this;
         }
 
         #endregion

@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1911881609346425757, guid: bfba2c5636ac45449972cd9a915cd18d, type: 3}
       propertyPath: m_Name
-      value: p_Ball_10 Variant
+      value: p_Ball_10
       objectReference: {fileID: 0}
     - target: {fileID: 1911881609346425757, guid: bfba2c5636ac45449972cd9a915cd18d, type: 3}
       propertyPath: m_IsActive
@@ -79,6 +79,10 @@ PrefabInstance:
     - target: {fileID: 3204041525912719596, guid: bfba2c5636ac45449972cd9a915cd18d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363076373134476863, guid: bfba2c5636ac45449972cd9a915cd18d, type: 3}
+      propertyPath: BallIndex
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

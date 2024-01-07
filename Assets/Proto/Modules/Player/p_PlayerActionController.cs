@@ -17,7 +17,6 @@ namespace Proto.Modules.Player
         
         [Space, Title("Balls")]
         [SerializeField] private GameObject _playerBallParent;
-        [SerializeField] private GameObject _ballsParent;
 
         private GameObject _nextBall;
         private GameObject _currentBall;
@@ -58,13 +57,13 @@ namespace Proto.Modules.Player
         
         private static GameObject GetNextBall()
         {
-            var balls = p_GameManager._instance.Balls;
+            var balls = p_GameManager.Instance.Balls;
             return balls[Random.Range(0, 5)];
         }
 
         private void DropBall()
         {
-            _currentBall.transform.SetParent(_ballsParent.transform);
+            _currentBall.transform.SetParent(p_GameManager.Instance.BallsParent.transform);
             
             var ball = _currentBall.GetComponent<p_Ball>();
             ball.ActiveRigidbody();
