@@ -1,4 +1,3 @@
-using System;
 using Proto.Modules.Manager;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -46,7 +45,7 @@ namespace Proto.Modules.Balls
             }
         }
         
-        private void OnCollisionExit2D(Collision2D other)
+        private void OnCollisionExit2D(Collision2D _)
         {
             _isCollided = false;
         }

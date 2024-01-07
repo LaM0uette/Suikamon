@@ -1,4 +1,6 @@
+using Game.Modules.Manager;
 using Game.Modules.Player.Inputs;
+using Obvious.Soap;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,6 +18,9 @@ namespace Game.Modules.Player
         [Space, Title("Player Settings")]
         [SerializeField] private float _speed = 7f;
         [SerializeField] private float _maxX = 4.75f;
+        
+        [Space, Title("Balls")]
+        [SerializeField] private FloatVariable _ballOffset;
 
         private void Awake()
         {
@@ -41,8 +46,7 @@ namespace Game.Modules.Player
             var mousePosition = Mouse.current.position.ReadValue();
             var worldPosition = _mainCamera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, _mainCamera.nearClipPlane));
 
-            //var offset = _maxX - GameManager.BallOffset;
-            var offset = _maxX;
+            var offset = _maxX - _ballOffset;
             if (worldPosition.x > offset)
             {
                 worldPosition = new Vector3(offset, worldPosition.y, worldPosition.z);

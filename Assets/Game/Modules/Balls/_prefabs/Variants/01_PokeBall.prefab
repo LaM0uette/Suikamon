@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3437916287544043121, guid: 19dcf6447e67f00439e968cfedc1af15, type: 3}
       propertyPath: m_Name
-      value: 01_PokeBall Variant
+      value: 01_PokeBall
       objectReference: {fileID: 0}
     - target: {fileID: 4676203683267382486, guid: 19dcf6447e67f00439e968cfedc1af15, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0625
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4676203683267382486, guid: 19dcf6447e67f00439e968cfedc1af15, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0625
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4676203683267382486, guid: 19dcf6447e67f00439e968cfedc1af15, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0625
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4676203683267382486, guid: 19dcf6447e67f00439e968cfedc1af15, type: 3}
       propertyPath: m_LocalPosition.x
