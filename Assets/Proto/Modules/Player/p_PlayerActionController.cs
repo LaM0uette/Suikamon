@@ -17,6 +17,7 @@ namespace Proto.Modules.Player
         
         [Space, Title("Balls")]
         [SerializeField] private GameObject _playerBallParent;
+        [SerializeField] private GameObject _nextBallParent;
 
         private GameObject _nextBall;
         private GameObject _currentBall;
