@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="align-items: center; flex-grow: 1; justify-content: flex-end; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px;">
+        <ui:VisualElement style="width: 650px; height: 550px; border-right-width: 2px; border-left-width: 2px; border-bottom-width: 2px; border-left-color: rgb(34, 34, 34); border-right-color: rgb(34, 34, 34); border-top-color: rgb(135, 46, 46); border-bottom-color: rgb(34, 34, 34); border-top-width: 2px;" />
+    </ui:VisualElement>
+</ui:UXML>
