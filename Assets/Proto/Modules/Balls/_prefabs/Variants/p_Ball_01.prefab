@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2865091304252029643
+--- !u!1001 &8348574263669215517
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 324617337367675131, guid: bfba2c5636ac45449972cd9a915cd18d, type: 3}
       propertyPath: m_Color.b
-      value: 0.23921569
+      value: 0.3063813
       objectReference: {fileID: 0}
     - target: {fileID: 324617337367675131, guid: bfba2c5636ac45449972cd9a915cd18d, type: 3}
       propertyPath: m_Color.g
-      value: 0.3254902
+      value: 0.46642774
       objectReference: {fileID: 0}
     - target: {fileID: 324617337367675131, guid: bfba2c5636ac45449972cd9a915cd18d, type: 3}
       propertyPath: m_Color.r
-      value: 0.85882354
+      value: 0.8018868
       objectReference: {fileID: 0}
     - target: {fileID: 1911881609346425757, guid: bfba2c5636ac45449972cd9a915cd18d, type: 3}
       propertyPath: m_Name
-      value: p_Ball_01
+      value: p_Ball_01 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3204041525912719596, guid: bfba2c5636ac45449972cd9a915cd18d, type: 3}
       propertyPath: m_LocalScale.x
@@ -74,10 +74,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3204041525912719596, guid: bfba2c5636ac45449972cd9a915cd18d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5363076373134476863, guid: bfba2c5636ac45449972cd9a915cd18d, type: 3}
-      propertyPath: BallIndex
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

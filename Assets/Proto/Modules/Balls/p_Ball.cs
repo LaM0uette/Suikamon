@@ -33,7 +33,7 @@ namespace Proto.Modules.Balls
             
             _isCollided = true;
 
-            if (ball.BallIndex == BallIndex)
+            if (ball.BallIndex == BallIndex && BallIndex < p_GameManager.Instance.Balls.Length - 1)
             {
                 var nextBall = p_GameManager.Instance.Balls[++BallIndex];
                 var ballGo = Instantiate(nextBall, transform.position, Quaternion.identity, p_GameManager.Instance.BallsParent.transform);

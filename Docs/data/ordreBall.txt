@@ -7,4 +7,5 @@
 7. Sombre ball
 8. Mémoire ball
 9. Master ball
-10. GS ball
+10. Origine Ball
+11. GS ball
