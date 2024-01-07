@@ -2,10 +2,10 @@
 2. Super ball
 3. Hyper ball
 4. Honor ball
-5. Soin ball
-6. Rapide ball
-7. Sombre ball
+5. Rapide ball
+6. Sombre ball
+7. Luxe ball
 8. Mémoire ball
 9. Master ball
-10. Origine Ball
-11. GS ball
+10. GS ball
+11. Origine Ball
