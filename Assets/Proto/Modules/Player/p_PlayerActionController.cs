@@ -56,10 +56,10 @@ namespace Proto.Modules.Player
             _currentBall = Instantiate(_nextBall, _playerBallParent.transform.position, Quaternion.identity, _playerBallParent.transform);
         }
         
-        private GameObject GetNextBall()
+        private static GameObject GetNextBall()
         {
-            var balls = p_GameManager._instance.SpawnableBalls;
-            return balls[Random.Range(0, 5)].ball;
+            var balls = p_GameManager._instance.Balls;
+            return balls[Random.Range(0, 5)];
         }
 
         private void DropBall()
