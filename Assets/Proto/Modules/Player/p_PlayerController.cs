@@ -57,13 +57,14 @@ namespace Proto.Modules.Player
             var mousePosition = Mouse.current.position.ReadValue();
             var worldPosition = _mainCamera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, _mainCamera.nearClipPlane));
 
-            if (worldPosition.x > _maxX)
+            var offset = _maxX - _inputReader.BallOffset;
+            if (worldPosition.x > offset)
             {
-                worldPosition = new Vector3(_maxX, worldPosition.y, worldPosition.z);
+                worldPosition = new Vector3(offset, worldPosition.y, worldPosition.z);
             }
-            else if (worldPosition.x < -_maxX)
+            else if (worldPosition.x < -offset)
             {
-                worldPosition = new Vector3(-_maxX, worldPosition.y, worldPosition.z);
+                worldPosition = new Vector3(-offset, worldPosition.y, worldPosition.z);
             }
             
             var playerTransform = transform;

@@ -1,4 +1,3 @@
-using System;
 using Proto.Modules.Balls;
 using Proto.Modules.Manager;
 using Proto.Modules.Player.Inputs;
@@ -52,6 +51,10 @@ namespace Proto.Modules.Player
         private void SpawnNextBall()
         {
             _nextBall = GetNextBall();
+            
+            var ballSize = _nextBall.transform.localScale;
+            _inputReader.BallOffset = ballSize.x / 2;
+            
             _currentBall = Instantiate(_nextBall, _playerBallParent.transform.position, Quaternion.identity, _playerBallParent.transform);
         }
         

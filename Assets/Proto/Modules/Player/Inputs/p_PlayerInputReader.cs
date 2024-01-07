@@ -7,6 +7,8 @@ namespace Proto.Modules.Player.Inputs
     public class p_PlayerInputReader : MonoBehaviour
     {
         #region Statements
+        
+        public float BallOffset { get; set; }
 
         public float MovementValue { get; private set; }
         
