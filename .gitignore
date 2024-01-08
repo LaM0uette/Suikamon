@@ -88,7 +88,6 @@ buildE2ETest/log/*
 .gradle/
 ExportedObj/
 *.snap
-*.png
 Resources*
 *.apk
 *.dwlt
