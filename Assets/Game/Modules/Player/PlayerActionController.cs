@@ -19,9 +19,9 @@ namespace Game.Modules.Player
         [SerializeField] private GameObject _playerBallParent;
         [SerializeField] private GameObject _nextBallParent;
         [SerializeField] private FloatVariable _ballOffset;
-
-        private GameObject _nextBall;
-        private GameObject _secondNextBall;
+        
+        private int _nextBallId;
+        private int _secondNextBallId;
         private GameObject _currentBall;
         
         private bool _canDropBall = true;
@@ -34,7 +34,7 @@ namespace Game.Modules.Player
 
         private void Start()
         {
-            _secondNextBall = GetNextBall();
+            _secondNextBallId = GetNextBallId();
             SpawnNextBall();
         }
 
@@ -58,26 +58,27 @@ namespace Game.Modules.Player
         
         private void SpawnNextBall()
         {
-            _nextBall = _secondNextBall;
+            var balls = GameManager.Instance.Balls;
+            var iconBalls = GameManager.Instance.IconBalls;
             
-            _currentBall = Instantiate(_nextBall, _playerBallParent.transform.position, Quaternion.identity, _playerBallParent.transform);
+            _nextBallId = _secondNextBallId;
             
+            _currentBall = Instantiate(balls[_nextBallId], _playerBallParent.transform.position, Quaternion.identity, _playerBallParent.transform);
             _ballOffset.Value = _currentBall.GetComponent<CircleCollider2D>().radius * _currentBall.transform.localScale.x;
             
-            _secondNextBall = GetNextBall();
+            _secondNextBallId = GetNextBallId();
 
             for (var i = 0; i < _nextBallParent.transform.childCount; i++)
                 Destroy(_nextBallParent.transform.GetChild(i).gameObject);
             
-            Instantiate(_secondNextBall, _nextBallParent.transform.position, Quaternion.identity, _nextBallParent.transform);
+            Instantiate(iconBalls[_secondNextBallId], _nextBallParent.transform.position, Quaternion.identity, _nextBallParent.transform);
         }
         
-        private static GameObject GetNextBall()
+        private static int GetNextBallId()
         {
-            var balls = GameManager.Instance.Balls;
-            return balls[Random.Range(0, 5)];
+            return Random.Range(0, 5);
         }
-
+        
         private void DropBall()
         {
             if (GameManager.IsGameOver || !_canDropBall) 

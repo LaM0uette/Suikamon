@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4876549081019901289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 560877825605532876}
+  - component: {fileID: 92494634371121036}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &560877825605532876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876549081019901289}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &92494634371121036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876549081019901289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f318249de4a26d4fa3933a8be99c5bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Balls:
+  - {fileID: 8764577777107238189, guid: 86f8d4471ee3163418f58e1b592be21b, type: 3}
+  - {fileID: 1555904179990087365, guid: 7a9f29023feec70498063b1764155e35, type: 3}
+  - {fileID: 7029537816804854744, guid: 50cd7a6eb8fca784183c58fb3dc4ae6d, type: 3}
+  - {fileID: 2140637303654056393, guid: 816f5905c03dda24a869b855d1fd9e08, type: 3}
+  - {fileID: 1495576138813126816, guid: 938ffb0a0b787f448b6e91fc54567491, type: 3}
+  - {fileID: 569789431208199580, guid: 298697093c455e74e9db014f268d853d, type: 3}
+  - {fileID: 6396883738468222204, guid: 581e144d2b985cd4994467e57bbe8f6f, type: 3}
+  - {fileID: 2994168424212772507, guid: 059673d671ad2c448b3ac1e5959965be, type: 3}
+  - {fileID: 3069723848749660318, guid: b70a61c144dc2d640970995754746ca5, type: 3}
+  - {fileID: 5088462867459188547, guid: 8c6d9e935e46ede41a9abfea7221a797, type: 3}
+  - {fileID: 2884642860324559709, guid: 4caa14433da23d04fa72931c4112d80d, type: 3}
+  IconsBalls:
+  - {fileID: 8764577777107238189, guid: 47fbd7dd8ef56c4488206baa7618f3f4, type: 3}
+  - {fileID: 1555904179990087365, guid: 61379ece0f92bae4284c63cb150f345b, type: 3}
+  - {fileID: 7029537816804854744, guid: 17a6b4bce7a1b8b428f5a77c6396c170, type: 3}
+  - {fileID: 2140637303654056393, guid: da12b8846b6eb7148be5d3fe5a40cc00, type: 3}
+  - {fileID: 1495576138813126816, guid: cb22e072c6e5d6a418d2cf17927106e7, type: 3}
+  BallsParent: {fileID: 0}

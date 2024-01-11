@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Modules.Manager
 {
@@ -12,6 +13,7 @@ namespace Game.Modules.Manager
         
         [Space, Title("Balls")]
         public GameObject[] Balls;
+        [FormerlySerializedAs("IconsBalls")] public GameObject[] IconBalls;
         
         [Space, Title("Parents")]
         public GameObject BallsParent;
