@@ -20,10 +20,31 @@ namespace Game.Modules.Manager
         {
             Instance ??= this;
         }
+        
+        private void Start()
+        {
+            LockCursor();
+        }
 
         #endregion
 
         #region Functions
+        
+        #region Cursor
+
+        private static void LockCursor()
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = false;
+        }
+        
+        private static void UnlockCursor()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        #endregion
 
         public void GameOver()
         {
