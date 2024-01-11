@@ -81,7 +81,7 @@ namespace Game.Modules.Balls
 
         public void Immpulse()
         {
-            _rigidbody.AddForce(Vector3.down * 10f, ForceMode2D.Impulse);
+            _rigidbody.AddForce(Vector3.down * 30f, ForceMode2D.Impulse);
         }
 
         #endregion
