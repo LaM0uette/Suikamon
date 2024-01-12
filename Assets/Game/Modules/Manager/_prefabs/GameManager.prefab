@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4876549081019901289}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -56,10 +56,16 @@ MonoBehaviour:
   - {fileID: 3069723848749660318, guid: b70a61c144dc2d640970995754746ca5, type: 3}
   - {fileID: 5088462867459188547, guid: 8c6d9e935e46ede41a9abfea7221a797, type: 3}
   - {fileID: 2884642860324559709, guid: 4caa14433da23d04fa72931c4112d80d, type: 3}
-  IconsBalls:
+  IconBalls:
   - {fileID: 8764577777107238189, guid: 47fbd7dd8ef56c4488206baa7618f3f4, type: 3}
   - {fileID: 1555904179990087365, guid: 61379ece0f92bae4284c63cb150f345b, type: 3}
   - {fileID: 7029537816804854744, guid: 17a6b4bce7a1b8b428f5a77c6396c170, type: 3}
   - {fileID: 2140637303654056393, guid: da12b8846b6eb7148be5d3fe5a40cc00, type: 3}
   - {fileID: 1495576138813126816, guid: cb22e072c6e5d6a418d2cf17927106e7, type: 3}
+  - {fileID: 569789431208199580, guid: 7068e02c2e4686a4cbc36627785b4909, type: 3}
+  - {fileID: 6396883738468222204, guid: 95dc9f02dfce81d4ea0e76d4e3b1ddc6, type: 3}
+  - {fileID: 2994168424212772507, guid: ab08447ebfd6d714d99fb316360236ba, type: 3}
+  - {fileID: 3069723848749660318, guid: 8f4c0f5350c87a748b67f1e8fbd7c86f, type: 3}
+  - {fileID: 5088462867459188547, guid: e8648c0b52bc1704b87c6cb71fe35801, type: 3}
+  - {fileID: 2884642860324559709, guid: f5d618e5658d8b9449936daf994d3586, type: 3}
   BallsParent: {fileID: 0}

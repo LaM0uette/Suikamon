@@ -20,12 +20,16 @@ namespace Game.Modules.Player
         [SerializeField] private GameObject _nextBallParent;
         [SerializeField] private FloatVariable _ballOffset;
         
+        [Space, Title("Settings")]
+        [SerializeField] private int _minBallId;
+        [SerializeField] private int _maxBallId = 4;
+        [SerializeField] private float _cooldown = 0.4f;
+        
         private int _nextBallId;
         private int _secondNextBallId;
         private GameObject _currentBall;
         
         private bool _canDropBall = true;
-        private float _cooldown = 0.4f;
         
         private void Awake()
         {
@@ -74,9 +78,9 @@ namespace Game.Modules.Player
             Instantiate(iconBalls[_secondNextBallId], _nextBallParent.transform.position, Quaternion.identity, _nextBallParent.transform);
         }
         
-        private static int GetNextBallId()
+        private int GetNextBallId()
         {
-            return Random.Range(0, 5);
+            return Random.Range(_minBallId, _maxBallId + 1);
         }
         
         private void DropBall()

@@ -40,7 +40,7 @@ namespace Game.Modules.Balls
             if (ball._ballIndex == _ballIndex && _ballIndex < GameManager.Instance.Balls.Length - 1)
             {
                 var nextBall = GameManager.Instance.Balls[++_ballIndex];
-                var ballGo = Instantiate(nextBall, other.transform.position, Quaternion.identity, GameManager.Instance.BallsParent.transform);
+                var ballGo = Instantiate(nextBall, (other.transform.position + transform.position) / 2, Quaternion.identity, GameManager.Instance.BallsParent.transform);
                 var newBall = ballGo.GetComponent<Ball>();
                 newBall.ActiveRigidbody();
                 newBall.Immpulse();
