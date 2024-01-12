@@ -1,7 +1,7 @@
 {
     "name": "Balls",
     "rootNamespace": "",
-    "references": ["GUID:19f88ff646b69bb4fa967c80f197077e"],
+    "references": ["GUID:19f88ff646b69bb4fa967c80f197077e","GUID:ee6baafdecd94804a8714654c4bd097f"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

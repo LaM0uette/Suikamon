@@ -1,7 +1,7 @@
 using Game.Modules.Manager;
+using Obvious.Soap;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Game.Modules.Balls
 {
@@ -16,6 +16,7 @@ namespace Game.Modules.Balls
         
         [Space, Title("Balls")]
         [SerializeField] private int _ballIndex;
+        [SerializeField] private IntVariable _score;
         
         [Space, Title("Time")]
         [SerializeField] private float _deadTime = 2f;
@@ -46,6 +47,8 @@ namespace Game.Modules.Balls
                 
                 Destroy(ball.gameObject);
                 Destroy(gameObject);
+                
+                _score.Value += _ballIndex * 3;
             }
         }
         

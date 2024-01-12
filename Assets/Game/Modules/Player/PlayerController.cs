@@ -1,4 +1,3 @@
-using Game.Modules.Manager;
 using Game.Modules.Player.Inputs;
 using Obvious.Soap;
 using Sirenix.OdinInspector;
