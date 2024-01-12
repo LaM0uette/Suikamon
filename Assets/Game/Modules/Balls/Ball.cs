@@ -1,6 +1,7 @@
 using Game.Modules.Manager;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Modules.Balls
 {
@@ -11,9 +12,13 @@ namespace Game.Modules.Balls
         
         private Rigidbody2D _rigidbody { get; set; }
         private bool _isCollided { get; set; }
+        private float _deadDeltaTime { get; set; }
         
         [Space, Title("Balls")]
-        public int BallIndex;
+        [SerializeField] private int _ballIndex;
+        
+        [Space, Title("Time")]
+        [SerializeField] private float _deadTime = 2f;
         
         private void Awake()
         {
@@ -31,9 +36,9 @@ namespace Game.Modules.Balls
             
             _isCollided = true;
 
-            if (ball.BallIndex == BallIndex && BallIndex < GameManager.Instance.Balls.Length - 1)
+            if (ball._ballIndex == _ballIndex && _ballIndex < GameManager.Instance.Balls.Length - 1)
             {
-                var nextBall = GameManager.Instance.Balls[++BallIndex];
+                var nextBall = GameManager.Instance.Balls[++_ballIndex];
                 var ballGo = Instantiate(nextBall, other.transform.position, Quaternion.identity, GameManager.Instance.BallsParent.transform);
                 var newBall = ballGo.GetComponent<Ball>();
                 newBall.ActiveRigidbody();
@@ -53,16 +58,24 @@ namespace Game.Modules.Balls
         {
             if (!other.gameObject.CompareTag("DeadZone")) return;
             
-            if (_isCollided)
+            _deadDeltaTime += Time.deltaTime;
+            if (_deadDeltaTime > _deadTime && _isCollided)
             {
                 GameManager.Instance.GameOver();
-                
+                    
                 var balls = GameManager.Instance.BallsParent.GetComponentsInChildren<Ball>();
                 foreach (var ball in balls)
                 {
                     ball.DeactiveRigidbody();
                 }
             }
+        }
+        
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (!other.gameObject.CompareTag("DeadZone")) return;
+            
+            _deadDeltaTime = 0f;
         }
 
         #endregion

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -730652966656224936, guid: 19dcf6447e67f00439e968cfedc1af15, type: 3}
+      propertyPath: _ballIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3437916287544043121, guid: 19dcf6447e67f00439e968cfedc1af15, type: 3}
       propertyPath: m_Name
       value: 01_PokeBall
